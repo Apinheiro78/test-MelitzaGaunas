@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 10 30 10 10px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+img{
+  width: 40%;
+}
+.navbar-brand {
+  width: 70px;
+}
+figure{
+  width: 20%;
+}
+
+.contenido {
+  padding-top: 10px;
+}
+
+
+.fondo {
+  background-image: url("/img/fondoCorazon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+  color: teal;
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+figure {
+  width: 20%;
+}
+.tituloPrincipal {
+  text-align: center;
+}
+
+.formulario {
+  margin: auto;
+  width: 20%;
+}
+
+
+

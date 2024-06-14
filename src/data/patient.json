@@ -1,0 +1,72 @@
+{
+    "patients": [
+      {
+        "nombre": "Pedro",
+        "apellido": "Perez",
+        "edad": 45,
+        "patologia": "Hipertensión",
+        "status": "Estable"
+      },
+      {
+        "nombre": "María",
+        "apellido": "González",
+        "patologia": "Diabetes Tipo 2",
+        "status": "Estable"
+      },
+      {
+        "nombre": "Carlos",
+        "apellido": "Rodríguez",
+        "edad": 29,
+        "patologia": "Asma",
+        "status": "Controlado"
+      },
+      {
+        "nombre": "Ana",
+        "apellido": "Martínez",
+        "edad": 50,
+        "patologia": "Cardiopatía",
+        "status": "Crítico"
+      },
+      {
+        "nombre": "Luis",
+        "apellido": "Fernández",
+        "edad": 65,
+        "status": "Estable"
+      },
+      {
+        "nombre": "Sofía",
+        "apellido": "López",
+        "edad": 23,
+        "patologia": "Alergias",
+        "status": "Controlado"
+      },
+      {
+        "nombre": "Miguel",
+        "apellido": "Ramírez",
+        "edad": 38,
+        "patologia": "Migrañas",
+        "status": "Estable"
+      },
+      {
+        "nombre": "Isabel",
+        "apellido": "Torres",
+        "edad": 27,
+        "patologia": "Hipotiroidismo",
+        "status": "Controlado"
+      },
+      {
+        "nombre": "Jorge",
+        "apellido": "Díaz",
+        "edad": 55,
+        "patologia": "Cáncer de Piel",
+        "status": "Tratamiento"
+      },
+      {
+        "nombre": "Laura",
+        "apellido": "Hernández",
+        "edad": 42,
+        "patologia": "Obesidad",
+        "status": "Estable"
+      }
+    ]
+  }
