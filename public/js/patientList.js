@@ -2,16 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const listPatient = document.querySelector("#listPatient");
 
     const patients = [
-        { apellido: "Perez", nombre: "Pedro", edad: 45, Patologia: "Hipertensión", Status: "Estable" },
-        { apellido: "González", nombre: "María", Patologia: "Diabetes Tipo 2", Status: "Estable" },
-        { apellido: "Rodriguez", nombre: "Carlos", edad: 29, Patologia: "Asma", Status: "Controlado" },
-        { apellido: "Martínez", nombre: "Ana", edad: 50, Patologia: "Cardiopatía", Status: "Crítico" },
+        { apellido: "Perez", nombre: "Pedro", edad: 45, Patologia: "Hipertensión", status: "Estable" },
+        { apellido: "González", nombre: "María", Patologia: "Diabetes Tipo 2", status: "Estable" },
+        { apellido: "Rodriguez", nombre: "Carlos", edad: 29, Patologia: "Asma", status: "Controlado" },
+        { apellido: "Martínez", nombre: "Ana", edad: 50, Patologia: "Cardiopatía", status: "Crítico" },
         { apellido: "Fernández", nombre: "Luis", edad: 65,  Status: "Estable" },
-        { apellido: "López", nombre: "Sofía", edad: 23, Patologia: "Alergias", Status: "Controlado" },
-        { apellido: "Ramirez", nombre: "Miguel", edad: 38, Patologia: "Migrañas", Status: "Estable" },
-        { apellido: "Torres", nombre: "Isabel", edad: 27, Patologia: "Hipotiroidismo", Status: "Controlado" },
-        { apellido: "Díaz", nombre: "Jorge", edad: 55, Patologia: "Cáncer de Piel", Status: "Tratamiento" },
-        { apellido: "Hernández", nombre: "Laura", edad: 42, Patologia: "Obesidad", Status: "Estable" }
+        { apellido: "López", nombre: "Sofía", edad: 23, Patologia: "Alergias", status: "Controlado" },
+        { apellido: "Ramirez", nombre: "Miguel", edad: 38, Patologia: "Migrañas", status: "Estable" },
+        { apellido: "Torres", nombre: "Isabel", edad: 27, Patologia: "Hipotiroidismo", status: "Controlado" },
+        { apellido: "Díaz", nombre: "Jorge", edad: 55, Patologia: "Cáncer de Piel", status: "Tratamiento" },
+        { apellido: "Hernández", nombre: "Laura", edad: 42, Patologia: "Obesidad", status: "Estable" }
     ];
 
     function renderPatients(patients) {
