@@ -1,13 +1,13 @@
 //variable
 const formAddPatient = document.querySelector("#addForm");
-const listPatient = document.querySelector("#listPatient");
+const listPatient = document.querySelector("#tableBody");
 
 let patients = [];
 
 eventListerns();
 
 function eventListerns() {
-  readJson();
+  //readJson();
   formAddPatient.addEventListener("submit", addPatient);
   document.addEventListener("DOMContentLoaded", () => {
     patients = JSON.parse(localStorage.getItem("patients")) || [];
@@ -32,18 +32,21 @@ function addPatient(e) {
   }
   const edad = document.querySelector("#edad").value;
   const patologia = document.querySelector("#patologia").value; 
-  const status = document.querySelector("#status").value;
+  const statusp = document.querySelector("#statusp").value;
   
   const patientsObject = {
     nombre: nombre,
     apellido: apellido,
     edad: edad,
     patologia: patologia,
-    status: status,
+    status: statusp,
   };
   patients = [...patients, patientsObject];
 
+
   crearHTML();
+
+ 
   formAddPatient.reset();
 }
 
@@ -57,43 +60,53 @@ function errorUsuario(error) {
     notaError.remove();
   }, 2500);
 }
-function crearHTML() {
- 
-  listPatient.innerHTML = "";
-  
-  patients.forEach((patient) => {
+
+function crearHTML() { 
+  listPatient.innerHTML = "";  
+  patients.forEach((patient, index) => {
     
-    const listItem = document.createElement("li");
-    listItem.classList.add("list-group-item");
+    const row = document.createElement("tr");
 
-    const patientDetails = document.createElement("div");
-    patientDetails.classList.add(
-      "d-flex",
-      "justify-content-between",
-      "align-items-center"
-    );
+    const nameParagraph = document.createElement("td");   
+    const lastNameParagrah = document.createElement("td");
+    const ageParagraph = document.createElement("td");
+    const patologiaParagraph = document.createElement("td");
+    const statuspParagraph = document.createElement("td");
 
-    const fullName = document.createElement("h5");
-    fullName.textContent = `${patient.nombre} ${patient.apellido}`;
-
-
-    const ageParagraph = document.createElement("p");
-    ageParagraph.textContent = `${patient.edad}`;
-    const patologiaParagraph = document.createElement("p");
+    nameParagraph.textContent = `${patient.nombre}`;
+    lastNameParagrah.textContent = `${patient.apellido}`;
+    ageParagraph.textContent = `${patient.edad}`; 
     patologiaParagraph.textContent = `${patient.patologia}`;
-    const statusParagraph = document.createElement("p");
-    statusParagraph.textContent = `${patient.status}`;
+    statuspParagraph.textContent = `${patient.status}`;
 
-    patientDetails.appendChild(fullName);
-    patientDetails.appendChild(ageParagraph);
-    patientDetails.appendChild(patologiaParagraph);
-    patientDetails.appendChild(statusParagraph);
+    const editButton = document.createElement("button");
+    editButton.classList.add("button", "button--secondary");
+    editButton.textContent ="Editar";
 
-    
-    listItem.appendChild(patientDetails);
+    editButton.addEventListener('click', function(){
+      editPatient(index);
+    })
+   
 
-  
-    listPatient.appendChild(listItem);
+    row.appendChild(nameParagraph);
+    row.appendChild(lastNameParagrah);
+    row.appendChild(ageParagraph);
+    row.appendChild(patologiaParagraph);
+    row.appendChild(statuspParagraph);
+
+    listPatient.appendChild(row);
+
+    function editPatient(index) {
+      const item = patients[index];
+      nombre.value= item.nombre;
+      apellido.value= item.apellido;
+      edad.value= item.edad;
+      patologia.value=item.patologia;
+      statusp.value= item.status;
+      patients.splice(index, 1);
+      sincronizarDATOS();
+      crearHTML();  
+    }
     
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("btn", "btn-danger");
@@ -104,21 +117,22 @@ function crearHTML() {
      
       const index = patients.findIndex(
         (p) => p.nombre === patient.nombre && p.apellido === patient.apellido
-      );
-   
+      );   
       patients.splice(index, 1);
      
       crearHTML();
      
-      const deleteButton = document.createElement("button");
+      //-----ojo lo borre xq lo copie arriba y no elimine este
+      /*const deleteButton = document.createElement("button");
       deleteButton.classList.add("btn", "btn-danger");
-      deleteButton.textContent = "Eliminar";
+      deleteButton.textContent = "Eliminar";*/
     });
 
-    // Agregar el nombre y el botón de eliminar al contenedor de detalles
+    row.appendChild(editButton);
+    row.appendChild(deleteButton);
     
-    patientDetails.appendChild(deleteButton);
   });
+  
   sincronizarDATOS();
 }
 
@@ -126,8 +140,7 @@ function sincronizarDATOS() {
   localStorage.setItem("patients", JSON.stringify(patients));
 }
 
-
-function readJson() {
+/*function readJson() {
   fetch("patient.json")
     .then((response) => response.json())
     .then((data) => {
@@ -137,4 +150,4 @@ function readJson() {
     .catch((error) => {
       console.error("Error:", error);
     });
-}
+}*/

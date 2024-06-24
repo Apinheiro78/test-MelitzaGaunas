@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function renderPatients(patients) {
         
-        listPatient.innerHTML = "";
+       
 
         patients.forEach(patient => {
           
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const lastNameLink = document.createElement("a");
             lastNameLink.href = "#"; 
             
-            lastNameLink.textContent = patient.apellido + ", " + patient.nombre;
+            lastNameLink.textContent = patient.apellido + " " + patient.nombre;
 
             lastNameLink.addEventListener("click", () => {
                 showPatientDetail(patient);

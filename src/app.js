@@ -3,6 +3,21 @@ const path = require('path');
 const methodOverride = require('method-override');
 const app = express();
 
+/*app.use(cors(corsOptions));
+const allowCrosDomain= function(req,res,next){
+    res.header('Access-Control-Allow-Origin',"hƩps://bln6v83fnk.execute-api.us-east-1.amazonaws.com/Prod/paƟents*");
+    res.header('Access-Control-Allow-Methods',"OPTIONS, POST, GET, PUT, DELETE");
+    res.header('Access-Control-Allow-Headers',"*");
+    res.header('Access-Control-Allow-Headers',"Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With")
+    next();
+}
+
+app.use(allowCrosDomain);
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json()) 
+
+app.use(express.urlencoded({extended:false}));*/
 //Ejecuto el llamado a mis rutas
 const indexRouter = require('./routes/index');
 const patientRouter = require('./routes/patientRouter');

@@ -31,15 +31,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const fullName = document.createElement("h5");
             fullName.textContent = `${patient.nombre} ${patient.apellido}`;
 
-            const ageParagraph = document.createElement("p");
-            ageParagraph.textContent = `Edad: ${patient.edad}`;
+            /*const ageParagraph = document.createElement("p");
+            ageParagraph.textContent = `Edad: ${patient.edad}`;*/
             const patologiaParagraph = document.createElement("p");
             patologiaParagraph.textContent = `Patología: ${patient.patologia}`;
             const statusParagraph = document.createElement("p");
             statusParagraph.textContent = `Estado: ${patient.status}`;
 
             patientDetails.appendChild(fullName);
-            patientDetails.appendChild(ageParagraph);
+            //patientDetails.appendChild(ageParagraph);
             patientDetails.appendChild(patologiaParagraph);
             patientDetails.appendChild(statusParagraph);
 
